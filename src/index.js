@@ -72,6 +72,7 @@ const createIncompleteList = (text) => {
     //divタグの子要素に各要素を設定
     addTarget.appendChild(li);
     addTarget.appendChild(backButton);
+    addTarget.appendChild(deleteButton);
 
     //完了リストに追加
     document.getElementById("complete-list").appendChild(addTarget);
@@ -85,7 +86,7 @@ const createIncompleteList = (text) => {
     deleteFromIncompleteList(deleteButton.parentNode);
   });
 
-  //divタグの子要素に各要素をせ体
+  //divタグの子要素に各要素を設定
   div.appendChild(li);
   div.appendChild(completeButton);
   div.appendChild(deleteButton);
