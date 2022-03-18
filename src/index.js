@@ -13,6 +13,11 @@ const deleteFromIncompleteList = (target) => {
   document.getElementById("incomplete-list").removeChild(target);
 };
 
+//  完了リストから指定の要素を削除
+const deleteFromCompleteList = (target) => {
+  document.getElementById("complete-list").removeChild(target);
+};
+
 //未完了リストに追加する関数
 const createIncompleteList = (text) => {
   //div生成
@@ -53,7 +58,15 @@ const createIncompleteList = (text) => {
 
       //テキスト取得
       const text = backButton.parentNode.firstElementChild.innerText;
-      console.log(text);
+      createIncompleteList(text);
+    });
+
+    //削除ボタンタグを生成
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "削除";
+    deleteButton.addEventListener("click", () => {
+      //押された削除ボタンの親タグを未完了リストから削除
+      deleteFromCompleteList(deleteButton.parentNode);
     });
 
     //divタグの子要素に各要素を設定
